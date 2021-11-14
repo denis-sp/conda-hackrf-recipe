@@ -1,0 +1,34 @@
+{% set name = "hackrf" %}
+{% set version = "2021.03.1" %}
+
+package:
+    name: {{ name|lower }}
+    version: {{ version }}
+
+source:
+    url: https://github.com/greatscottgadgets/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.xz
+    sha256: a43e5080c11efdfe69ddebcc35a02b018e30e820de0e0ebdc7948cf7b0cd93a3
+    patches:
+        - 0001_cmake_files.patch
+
+build:
+    number: 0
+
+requirements:
+    build:
+        - m2w64-toolchain
+        - cmake
+        - m2w64-make
+    host:
+        - libusb >=1
+        - fftw
+        - m2w64-winpthreads-git
+    run:
+        - m2w64-winpthreads-git 
+
+about:
+    home: https://greatscottgadgets.com/
+    license: GPL
+    license_file: COPYING
+    summary: host software for HackRF
+
