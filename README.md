@@ -1,3 +1,3 @@
 # conda-hackrf-recipe
 
-conda build hackrf -c conda-forge
+conda build hackrf --no-anaconda-upload -c conda-forge
