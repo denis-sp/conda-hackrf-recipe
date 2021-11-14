@@ -9,7 +9,7 @@ if errorlevel 1 exit 1
 cd build
 if errorlevel 1 exit 1
 
-cmake -G "MinGW Makefiles" ^
+cmake -G "Ninja" ^
     -DCMAKE_BUILD_TYPE:STRING=Release ^
     -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
     -DLIB_INSTALL_DIR:PATH="lib" ^
